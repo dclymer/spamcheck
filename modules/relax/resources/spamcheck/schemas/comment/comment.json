@@ -1,0 +1,19 @@
+{
+	"status": "",
+	"code": 200,
+	"results": {
+		"content": "The comment body",
+		"created": "February, 26 2014 11:49:35 -0800",
+		"permalink": "http://path/where/comment/was/posted",
+		"referrer": "http://path/where/author/came/from",
+		"authorurl": "http://comment/author/url",
+		"authoremail": "author@email",
+		"updated": "February, 26 2014 11:49:36 -0800",
+		"user_agent": "Firefox",
+		"blogurl": "http://path/to/your/site",
+		"id": 0,
+		"commenttype": "comment",
+		"user_ip": "127.0.0.1",
+		"author": "author name"
+	}
+}

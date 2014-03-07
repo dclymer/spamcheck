@@ -1,0 +1,5 @@
+WEB-INF/
+settings.xml
+test/
+plugins/BugLog.cfc
+includes/cache/

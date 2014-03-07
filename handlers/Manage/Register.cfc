@@ -1,0 +1,3 @@
+﻿component output="false" singleton{	public void function index(event,rc,prc){		var UserService = getModel('UserService');		event.setView("manage/register/index");	}	public void function save(event,rc,prc) {		var result = {};		result['succes'] = true;		result['errors'] = [];
+				var UserService = getModel('UserService');		var User = UserService.new();		populateModel( User );		prc.validationResults = validateModel( User );		if( prc.validationResults.hasErrors() ) {			result['succes'] = false;			result['errors'] = prc.validationResults.getAllErrorsAsStruct();
+		} else {			UserService.save( User );			EntityReload(User);			result['user'] = User.toJSON();			UserService.setUserSession(User);		}		event.renderData(data=result,type='json');	}	}

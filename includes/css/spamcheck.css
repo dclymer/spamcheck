@@ -1,0 +1,118 @@
+.input-group-xsm > .form-control,
+.input-group-xsm > .input-group-addon,
+.input-group-xsm > .input-group-btn > .btn {
+ margin-top:1px;
+  height: 25px;
+  padding: 3px 7px;
+  font-size: 12px;
+  line-height: 1.2;
+  border-radius: 2px;
+}
+
+
+ul.nav span.glyphicon {
+    font-size: 1.2em;
+}
+
+
+/* START: sticky footer */
+html,
+body {
+  height: 100%;
+  background: url(../images/sigmaprojects/main_bg.gif);
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -30px;
+  /* Pad bottom by footer height */
+  padding: 0 0 30px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 30px;
+  background-color: #f5f5f5;
+}
+#footer > .container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* END: sticky footer */
+
+
+
+.navbar-brand {
+	padding:5px 15px;
+}
+
+.sameheightgrid div.panel{ min-height:250px; }
+@media (max-width: 760px){
+	.sameheightgrid{ width: 33%; }
+	.sameheightgrid div.panel{ min-height:200px; }
+	.sameheightgrid:nth-child(3n+1) {  
+		clear:both;
+	}
+	.projectview .info {
+		width:100%;
+		clear:both;
+	}
+}
+@media (max-width: 610px){
+	.sameheightgrid{ width: 50%; }
+	.sameheightgrid div.panel{ min-height:200px; }
+	.projectlist .sameheightgrid:nth-child(2n+1) {  
+		clear:both;
+	}
+	.projectview .info {
+		width:100%;
+		clear:both;
+	}
+}
+@media (max-width: 405px){
+	.sameheightgrid{ width: 100%; clear:both; }
+}
+
+
+
+
+
+#search-logs {}
+div.container.search-logs {
+	width:90%;
+}
+#search-logs table#logtable tr td, #search-logs table#logtable tr th {
+	text-align:center;
+}
+#search-logs table#logtable tr td.l, #search-logs table#logtable tr th.l {
+	text-align:left;
+}
+
+#search-logs table#logtable tr th.content-head {
+	text-align:center;
+} 
+#search-logs table#logtable tr th.content-head span {
+	width: 33%;
+	display:inline-block;
+}
+
+/*
+dl.logdetail {}
+dl.logdetail dd:after {
+	content: "";
+}
+*/
+
+.unselectable {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	filter: alpha(opacity=50);
+	opacity: .5;
+}
