@@ -87,15 +87,14 @@ component extends="coldbox.system.orm.hibernate.VirtualEntityService" singleton 
 
 
 		if( structKeyExists(arguments,'createdBefore') && !IsNull(arguments.createdBefore) && IsDate(arguments.createdBefore) ) {
-			var _beforeDate = dateAdd('d',1,  CreateDate(Year(arguments.createdBefore),Month(arguments.createdBefore),DaysInMonth(arguments.createdBefore)));
-			ArrayAppend(Criteria, Restrictions.lt( 'created', createObject('java', 'java.util.Date').init(  _beforeDate.getTime()   )));
+			var _beforeDate = dateAdd('d',1,  CreateDate(Year(arguments.createdBefore),Month(arguments.createdBefore),Day(arguments.createdBefore)));
+			c.isLE( 'created', createObject('java','java.util.Date').init(_beforeDate.getTime()) );
 		}
-		if( structKeyExists(arguments,'createdAfter') && IsNull(arguments.createdAfter) && IsDate(arguments.createdAfter) ) {
-			var _afterDate = CreateDate(Year(arguments.createdAfter),Month(arguments.createdAfter),1);
-			ArrayAppend(Criteria, Restrictions.gt( 'received', createObject('java', 'java.util.Date').init(  _afterDate.getTime()  )));
+		if( structKeyExists(arguments,'createdAfter') && !IsNull(arguments.createdAfter) && IsDate(arguments.createdAfter) ) {
+			var _afterDate = CreateDate(Year(arguments.createdAfter),Month(arguments.createdAfter),Day(arguments.createdAfter));
+			c.isGE( 'created', createObject('java','java.util.Date').init(_afterDate.getTime()) );
 		}
 
-		
 		if( listContainsNoCase(arguments.sortOrder,'a.') && !arrayContains(Aliases,'App') ) { c.createAlias( 'App', 'a'); }
 		if( listContainsNoCase(arguments.sortOrder,'c.') && !arrayContains(Aliases,'Comment') ) { c.createAlias( 'Comment', 'c'); }
 		/*
