@@ -40,14 +40,8 @@ component extends="coldbox.system.orm.hibernate.VirtualEntityService" singleton 
 			
 			try {
 				var Log = newLog(argumentCollection=arguments);
-				//Log.setApp( arguments.App );
 				
 				if( arguments.App.hasPostbackURL() ) {
-					/*
-					if( !isValid('url', arguments.PostbackURL) ) {
-						throw(message="Invalid PostbackURL", type="LogService.InvalidPostbackURL");
-					}
-					*/
 					Log.setPostbackURL( arguments.PostbackURL );
 				}
 		

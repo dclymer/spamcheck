@@ -5,12 +5,7 @@
 	<ul class="nav navbar-nav">
 
 		<li <cfif !getPlugin('SessionStorage').exists('user')>style="display:none;"</cfif> class="loginrequired #(ce eq 'status'				? 'active' : '')#"	><a href="/manage/apps"				title="My Apps"		><span class="fa fa-cogs fa-2x"				></span></a></li>
-		<li <cfif !getPlugin('SessionStorage').exists('user')>style="display:none;"</cfif> class="loginrequired #(ce eq 'log'				? 'active' : '')#"	><a href="/log"						title="Latest"		><span class="fa fa-th-list fa-2x"			></span></a></li>
-		
-		<!---
-		no longer used, migrated per-app-settings
-		<li class="#(ce eq 'settings'			? 'active' : '')#"	><a href="/manage/settings"			title="Settings"	><span class="fa fa-check-square-o fa-2x"	></span></a></li>
-		--->
+		<li <cfif !getPlugin('SessionStorage').exists('user')>style="display:none;"</cfif> class="loginrequired #(ce eq 'log'					? 'active' : '')#"	><a href="/log"						title="Latest"		><span class="fa fa-th-list fa-2x"			></span></a></li>
 		
 		<li <cfif !getPlugin('SessionStorage').exists('user')>style="display:none;"</cfif> class="loginrequired #(ce eq 'logout'			? 'active' : '')#"	><a href="##"						title="Logout"		><span class="fa fa-unlock fa-2x"			></span></a></li>
 		

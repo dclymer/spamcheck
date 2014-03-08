@@ -29,15 +29,14 @@ component output="false" singleton {
 		if( !Len(Trim(Event.getValue('appid',''))) ) {
 			throw(message='Missing AppID in header.',type="Unauthorized.MissingAppID");
 		}
-		var Criteria = {
-			User = User,
-			appid = rc.appid
-		};
-		var App = getModel('AppService').findWhere(Criteria=Criteria);
+		
+		/*
+		var App = getModel('AppService').findWhere(Criteria={User=User,appid=rc.appid});
 		if( IsNull( App ) ) {
 			throw(message='Invalid AppID.',type="Unauthorized.InvalidAppID");
 		}
 		rc.App = App;
+		*/
 		rc.User = User;
 		
 		prc.BaseObject = new spamcheck.model.BaseObject();

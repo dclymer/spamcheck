@@ -15,6 +15,13 @@
     </div>
   </div>
 </div>
+<div class="modal fade" id="log-appdetail-modal" tabindex="-1" role="dialog" aria-labelledby="App Detail" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
+
 
 <cfoutput>
 
@@ -34,12 +41,7 @@
 
 				&nbsp; &nbsp;  
 				<div class="form-group">
-					<!---
-					<input type="text" class="form-control" placeholder="0" name="level_range" style="width:45px;" value="#listGetAt(rc.level_range,1)#" data-toggle="tooltip" title="Level Range From">
-					<input type="text" class="form-control" placeholder="80" name="level_range" style="width:45px;" value="#listGetAt(rc.level_range,2)#" data-toggle="tooltip" title="Level Range To">
-					--->
 					<input type="date" class="form-control"  name="createdafter" value="#rc.createdafter#" style="width:160px" data-toggle="tooltip" title="Created After Date" />
-
 					<input type="date" class="form-control"  name="createdBefore" value="#rc.createdBefore#" style="width:160px" data-toggle="tooltip" title="Created Before Date" />
 				</div>
 				

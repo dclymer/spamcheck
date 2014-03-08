@@ -28,6 +28,8 @@ component extends="coldbox.system.orm.hibernate.VirtualEntityService" singleton 
 		Any			commentType,
 		Any			user_id,
 		Any			app_id,
+		Any			createdBefore,
+		Any			createdAfter,
 		Numeric		Max					= 50,
 		Numeric		Offset				= 0,
 		Numeric		Timeout				= 0,
@@ -81,6 +83,16 @@ component extends="coldbox.system.orm.hibernate.VirtualEntityService" singleton 
 		if( arrayLen(_AppIDs) ) {
 			if( !arrayContains(Aliases,'App') ) { arrayAppend(Aliases,'App'); c.createAlias( 'App', 'a'); }
 			c.isin('a.id', c.convertIDValueToJavaType( propertyName="a.id", value=_AppIDs ) );
+		}
+
+
+		if( structKeyExists(arguments,'createdBefore') && !IsNull(arguments.createdBefore) && IsDate(arguments.createdBefore) ) {
+			var _beforeDate = dateAdd('d',1,  CreateDate(Year(arguments.createdBefore),Month(arguments.createdBefore),DaysInMonth(arguments.createdBefore)));
+			ArrayAppend(Criteria, Restrictions.lt( 'created', createObject('java', 'java.util.Date').init(  _beforeDate.getTime()   )));
+		}
+		if( structKeyExists(arguments,'createdAfter') && IsNull(arguments.createdAfter) && IsDate(arguments.createdAfter) ) {
+			var _afterDate = CreateDate(Year(arguments.createdAfter),Month(arguments.createdAfter),1);
+			ArrayAppend(Criteria, Restrictions.gt( 'received', createObject('java', 'java.util.Date').init(  _afterDate.getTime()  )));
 		}
 
 		
