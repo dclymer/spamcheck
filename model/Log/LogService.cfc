@@ -15,6 +15,22 @@ component extends="coldbox.system.orm.hibernate.VirtualEntityService" singleton 
 	}
 
 
+	public any function getByUserIDLogID(
+		Required	Numeric		userId,
+		Required	Numeric		logId,
+					Boolean		retrunObj	= true
+	) {
+		var Log = super.get(arguments.logId);
+		if( !IsNull(Log) && Log.hasApp() && Log.getApp().hasUser() && Log.getApp().getUser().getID() eq arguments.userId ) {
+			return Log;
+		} else if( arguments.retrunObj ) {
+			return super.new();
+		}
+	}
+
+
+
+
 	public Log function process(
 		Required	App			App,
 					Any			PostbackData	= ''

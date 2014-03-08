@@ -13,6 +13,7 @@ component extends="coldbox.system.orm.hibernate.VirtualEntityService" singleton 
 		super.init("Log", "Log.query.cache", true );
 		return this;
 	}
+	
 
 	public struct function search(
 		Any			author,
@@ -71,8 +72,9 @@ component extends="coldbox.system.orm.hibernate.VirtualEntityService" singleton 
 
 		var _UserIDs = extractParamArray(arguments,'user_id');
 		if( arrayLen(_UserIDs) ) {
-			if( !arrayContains(Aliases,'App.User') ) { arrayAppend(Aliases,'App.User'); c.createAlias( 'App.User', 'au'); }
-			c.isin('au.id', c.convertIDValueToJavaType( propertyName="au.id", value=_UserIDs ) );
+			if( !arrayContains(Aliases,'App') ) { arrayAppend(Aliases,'App'); c.createAlias( 'App', 'a'); }
+			if( !arrayContains(Aliases,'a.User') ) { arrayAppend(Aliases,'a.User'); c.createAlias( 'a.User', 'au'); }
+			c.isIn('au.id', javaCast('integer[]' , _UserIDs) );
 		}
 		
 		var _AppIDs = extractParamArray(arguments,'app_id');

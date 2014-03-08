@@ -27,6 +27,7 @@ Register.prototype.Init = function(){
 
 Register.prototype.save = function( jForm ) {
 	var objSelf = this;
+	$('#register-container').addClass('unselectable');
 	var data = {
 		email: jForm.find('input[name="email"]').val(),
 		password: jForm.find('input[name="password"]').val(),
@@ -49,9 +50,10 @@ Register.prototype.saveDone = function(data, textStatus, jqXHR, jForm) {
 	var objSelf = this;
 	jForm.find('div.has-error').removeClass('has-error');
 	jForm.find('ul.errors').empty();
-
+	$('#register-container').removeClass('unselectable');
+	
 	if( data.hasOwnProperty('user') ) {
-		window.location = '/';
+		window.location = '/manage/apps';
 	} else {
 
 		for (var key in data.errors) {
@@ -66,29 +68,12 @@ Register.prototype.saveDone = function(data, textStatus, jqXHR, jForm) {
 				}
 			}
 		}
-		
-		/*
-		for (var key in data.errors) {
-			var obj = data.errors[key];
-			for (var prop in obj) {
-				if(obj.hasOwnProperty(prop)){
-					var formElm = $('div#'+prop);
-					formElm.addClass('has-error');
-					for(var i in obj[prop]) {
-						var entry = obj[prop][i];
-						if( entry.hasOwnProperty('message') ) {
-							var msghtml = $('<li></li>').text( entry.message );
-							formElm.find( 'ul.errors' ).append(msghtml);
-						}
-					}
-				}
-			}
-		}
-		*/
+
 	}
 
 };
 Register.prototype.saveFail = function(jqXHR, textStatus, errorThrown) {
+	$('#register-container').removeClass('unselectable');
 	alert('Error Saving');
 };
 

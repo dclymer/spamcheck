@@ -88,15 +88,7 @@
 			root = { levelMin="FATAL", levelMax="WARN", appenders="AsyncDBAppender,coldboxTracer" },
 			/*
 			categories = {
-				'model.Item.Item.ItemService' = { levelMin="FATAL", levelMax="INFO", appenders="AsyncDBAppender" },
-				'model.Item.ItemUpdate.ItemUpdateService' = { levelMin="FATAL", levelMax="INFO", appenders="AsyncDBAppender" },
-				'model.MarketData.MarketData.MarketDataService' = { levelMin="FATAL", levelMax="INFO", appenders="AsyncDBAppender" },
-				'model.MarketData.MarketDataUpdate.MarketDataUpdateService' = { levelMin="FATAL", levelMax="INFO", appenders="AsyncDBAppender" },
-				'model.Craft.Recipe.RecipeUpdate.RecipeUpdateService' = { levelMin="FATAL", levelMax="INFO", appenders="AsyncDBAppender" },
-				'model.User.User.UserService' = { levelMin="FATAL", levelMax="INFO", appenders="AsyncDBAppender" },
-				'model.Item.GW2DBUpdate.GW2DBUpdateService' = { levelMin="FATAL", levelMax="INFO", appenders="AsyncDBAppender" },
-				'model.Alert.Alert.AlertService' = { levelMin="FATAL", levelMax="INFO", appenders="AsyncDBAppender" },
-				'model.Alert.AlertSender.AlertSenderService' = { levelMin="FATAL", levelMax="INFO", appenders="AsyncDBAppender" }
+				'model.SomeService' = { levelMin="FATAL", levelMax="INFO", appenders="AsyncDBAppender" },
 			},
 			*/
 			// Implicit Level Categories

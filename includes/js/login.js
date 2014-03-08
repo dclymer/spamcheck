@@ -24,11 +24,19 @@ Login.prototype.Init = function(){
 		}
 	);
 
+	$('form#login-form').on('click', 'button.register',
+		function( objEvent ) {
+			var $this = $(this);
+			window.location = '/manage/register';
+			return( false );
+		}
+	);	
 
 };
 
 Login.prototype.send = function( jForm ) {
 	var objSelf = this;
+	jForm.addClass('unselectable');
 	var data = {
 		email: jForm.find('input[name="email"]').val(),
 		password: jForm.find('input[name="password"]').val()
@@ -49,11 +57,12 @@ Login.prototype.send = function( jForm ) {
 Login.prototype.sendDone = function(data, textStatus, jqXHR, jForm) {
 	var objSelf = this;
 	jForm.find('div.has-error').removeClass('has-error');
-	
+	jForm.removeClass('unselectable');
 
 	if( data ) {
 		jForm.parent().hide();
 		$('ul.navbar-nav li a[title="Logout"]').parent().show();
+		$('ul.navbar-nav li.loginrequired').show();
 	} else {
 		jForm.find('div.form-group').addClass('has-error');
 	}

@@ -51,42 +51,7 @@
 						</cfloop>
 					</select>
 				</div>
-				
-				<!---
-				&nbsp; &nbsp;
-				<div class="form-group" data-toggle="tooltip" title="Sorting Options">
-					<select name="sortorder_" id="sortorder_" data-placeholder="Sort" class="chosen-select form-control" multiple style="width:260px;">
-						<option value="name asc" <cfif arrayContains(rc.sortOrderArr,'name asc')>selected</cfif>>Name  &uarr;</option>
-						<option value="name desc" <cfif arrayContains(rc.sortOrderArr,'name desc')>selected</cfif>>Name &darr;</option>
-						
-						<option value="level asc" <cfif arrayContains(rc.sortOrderArr,'level asc')>selected</cfif>>Level  &uarr;</option>
-						<option value="level desc" <cfif arrayContains(rc.sortOrderArr,'level desc')>selected</cfif>>Level &darr;</option>
-						
-						<option value="rarity_id asc" <cfif arrayContains(rc.sortOrderArr,'rarity_id asc')>selected</cfif>>Rarity  &uarr;</option>
-						<option value="rarity_id desc" <cfif arrayContains(rc.sortOrderArr,'rarity_id desc')>selected</cfif>>Rarity &darr;</option>
-						
-						<option value="itemtype_name asc" <cfif arrayContains(rc.sortOrderArr,'itemtype_name asc')>selected</cfif>>Type  &uarr;</option>
-						<option value="itemtype_name desc" <cfif arrayContains(rc.sortOrderArr,'itemtype_name desc')>selected</cfif>>Type &darr;</option>
-						
-						<option value="supply asc" <cfif arrayContains(rc.sortOrderArr,'supply asc')>selected</cfif>>Supply  &uarr;</option>
-						<option value="supply desc" <cfif arrayContains(rc.sortOrderArr,'supply desc')>selected</cfif>>Supply &darr;</option>
-						
-						<option value="demand asc" <cfif arrayContains(rc.sortOrderArr,'demand asc')>selected</cfif>>Demand  &uarr;</option>
-						<option value="demand desc" <cfif arrayContains(rc.sortOrderArr,'demand desc')>selected</cfif>>Demand &darr;</option>
-						
-						<option value="last_min_sale asc" <cfif arrayContains(rc.sortOrderArr,'last_min_sale asc')>selected</cfif>>Max Sale Price  &uarr;</option>
-						<option value="last_min_sale desc" <cfif arrayContains(rc.sortOrderArr,'last_min_sale desc')>selected</cfif>>Max Sale Price &darr;</option>
-						
-						<option value="last_max_offer asc" <cfif arrayContains(rc.sortOrderArr,'last_max_offer asc')>selected</cfif>>Max Buy Price  &uarr;</option>
-						<option value="last_max_offer desc" <cfif arrayContains(rc.sortOrderArr,'last_max_offer desc')>selected</cfif>>Max Buy Price &darr;</option>
-						
-						<option value="upgradecomponent_price_difference asc" <cfif arrayContains(rc.sortOrderArr,'upgradecomponent_price_difference asc')>selected</cfif>>Component Difference &uarr;</option>
-						<option value="upgradecomponent_price_difference desc" <cfif arrayContains(rc.sortOrderArr,'upgradecomponent_price_difference desc')>selected</cfif>>Component Difference &darr;</option>
-						
-						
-					</select>
-				</div>
-				--->
+
 				<div class="form-group">
 					<button type="submit" class="btn btn-default form-control">Submit</button>
 				</div>
@@ -115,6 +80,7 @@
 				<th class="sort text-primary" data-param="sortorder" data-value="created #(rc.sortorder eq 'created asc' ? 'desc' : 'asc')#">Date</th>
 				<th id="togglehams" style="text-align:center; cursor:pointer;">Ham</th>
 				<th id="togglespams" style="text-align:center; cursor:pointer;">Spam</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tfoot>

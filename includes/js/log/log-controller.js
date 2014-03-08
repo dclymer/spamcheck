@@ -65,6 +65,7 @@ LogController.prototype.submitControls = function( jElms ) {
 			id:		e.data('id'),
 			type:	e.val()
 		});
+		e.parents('tr').addClass('unselectable');
 	});
 
 	var req = $.ajax({
@@ -91,6 +92,7 @@ LogController.prototype.submitControlsDone = function(data, textStatus, jqXHR, j
 				e.data('id'),
 				e.parents('tr')
 			);
+			e.parents('tr').removeClass('unselectable');
 		});
 	};
 };
