@@ -52,6 +52,7 @@
 	
 	//writedump(application);
 	
+	/*
 	function callLogSave(boolean testing=false) {
 
 		var oHTTP = new http(
@@ -71,7 +72,6 @@
 		pbd['arr']	 = [1,2,3,4];
 		params['PostbackData']	= serializeJson(pbd);
 		
-		/**/
 		// add params
 		if( !structIsEmpty( params ) ){
 			for( var thisParam in params ){
@@ -92,8 +92,8 @@
 		writeoutput('Could not deserialize');
 		writeoutput('<br />');
 	}
-	/*
 	*/
+	
 	/*
 	*/
 	

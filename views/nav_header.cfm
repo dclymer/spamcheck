@@ -3,7 +3,9 @@
 	<cfset ce = getRequestContext().getCurrentEvent() />
 
 	<ul class="nav navbar-nav">
-
+		
+		<li class="#(ce eq 'status'				? 'active' : '')#"	><a href="/console/home/relaxer"				title="API Console & Docs"		target="_blank"><span class="fa fa-compress fa-2x"				></span></a></li>
+		
 		<li <cfif !getPlugin('SessionStorage').exists('user')>style="display:none;"</cfif> class="loginrequired #(ce eq 'status'				? 'active' : '')#"	><a href="/manage/apps"				title="My Apps"		><span class="fa fa-cogs fa-2x"				></span></a></li>
 		<li <cfif !getPlugin('SessionStorage').exists('user')>style="display:none;"</cfif> class="loginrequired #(ce eq 'log'					? 'active' : '')#"	><a href="/log"						title="Latest"		><span class="fa fa-th-list fa-2x"			></span></a></li>
 		
