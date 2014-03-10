@@ -65,6 +65,9 @@
 		map("PostbackService").to("spamcheck.model.Postback.PostbackService").into(this.SCOPES.REQUEST);
 		
 		map("SubmissionService").to("spamcheck.model.Submission.SubmissionService").into(this.SCOPES.REQUEST);
+		
+		map("StatsService").to("spamcheck.model.Stats.StatsService").into(this.SCOPES.REQUEST);
+		
 	}	
 
 }

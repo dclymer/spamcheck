@@ -30,10 +30,34 @@ component extends="coldbox.system.orm.hibernate.VirtualEntityService" singleton 
 
 
 
-
+	/**
+	* Creates and Processes a new log
+	* @app.hint The app this log will be associated with
+	* @postbackData.hint Data that will be sent in postbacks to the app
+	* @author.hint The author making the comment
+	* @authorEmail.hint The author email
+	* @authorURL.hint the Author URL
+	* @content.hint The content that was submitted.
+	* @permalink.hint The permanent location of the entry the comment was submitted to.
+	* @blogURL.hint The front page or home URL of the instance making the request. For a blog or wiki this would be the front page. Note: Must be a full URI, including http://. 
+	* @user_ip.hint The author IP address.
+	* @user_agent.hint The author user agent.
+	* @referrer.hint The referrer from the author.
+	* @commentType.hint May be blank, comment, trackback, pingback, or a made up value like "registration".
+	*/
 	public Log function process(
-		Required	App			App,
-					Any			PostbackData	= ''
+		Required	App			app,
+					Any			postbackData	= '',
+		Required	String		author,
+		Required	String		authorEmail,
+		Required	String		authorURL,
+		Required	String		content,
+		Required	String		permalink,
+		Required	String		blogURL,
+		Required	String		user_ip,
+		Required	String		user_agent,
+		Required	String		referrer,
+					String		commentType		= "comment"
 	) {
 		
 		transaction action="begin" {
@@ -63,6 +87,19 @@ component extends="coldbox.system.orm.hibernate.VirtualEntityService" singleton 
 		return Log;
 	}
 
+	/**
+	* Creates a new log
+	* @author.hint The author making the comment
+	* @authorEmail.hint The author email
+	* @authorURL.hint the Author URL
+	* @content.hint The content that was submitted.
+	* @permalink.hint The permanent location of the entry the comment was submitted to.
+	* @blogURL.hint The front page or home URL of the instance making the request. For a blog or wiki this would be the front page. Note: Must be a full URI, including http://. 
+	* @user_ip.hint The author IP address.
+	* @user_agent.hint The author user agent.
+	* @referrer.hint The referrer from the author.
+	* @commentType.hint May be blank, comment, trackback, pingback, or a made up value like "registration".
+	*/
 	public Log function newLog(
 		Required	App		App,
 		Required	String	author,
